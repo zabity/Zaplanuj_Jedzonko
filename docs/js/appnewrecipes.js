@@ -138,7 +138,7 @@ recipeIngrButton.addEventListener("click", function () {
         alert("Przepis Zapisany !")
         e.preventDefault();
         formRecipe.reset();
-        window.location = 'app.html'
+        window.location = 'index.html'
     }
 });
 
