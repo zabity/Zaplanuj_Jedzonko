@@ -5,24 +5,24 @@ var autoprefixer = require("gulp-autoprefixer");
 var browserSync = require("browser-sync").create();
 
 gulp.task("watch", function(cb) {
-  gulp.watch("development/scss/**/*.scss", gulp.series("sass"));
+  gulp.watch("docs/scss/**/*.scss", gulp.series("sass"));
   cb();
 });
 
 gulp.task("serve", function(cb) {
   browserSync.init({
-    server: "./development"
+    server: "./docs"
   });
-  gulp.watch("development/scss/**/*.scss", gulp.series("sass"));
-  gulp.watch("development/*.html").on("change", browserSync.reload);
-  gulp.watch("development/js/*.js").on("change", browserSync.reload);
+  gulp.watch("docs/scss/**/*.scss", gulp.series("sass"));
+  gulp.watch("docs/*.html").on("change", browserSync.reload);
+  gulp.watch("docs/js/*.js").on("change", browserSync.reload);
   cb();
 });
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task("sass", function() {
   return gulp
-    .src("development/scss/**/*.scss")
+    .src("docs/scss/**/*.scss")
     .pipe(sass().on("error", sass.logError))
     .pipe(sourcemaps.init())
     .pipe(
@@ -31,7 +31,7 @@ gulp.task("sass", function() {
       })
     )
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest("development/css"))
+    .pipe(gulp.dest("docs/css"))
     .pipe(browserSync.stream());
 });
 
