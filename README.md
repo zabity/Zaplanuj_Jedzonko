@@ -2,7 +2,7 @@
 <a href="https://zabity.github.io/Zaplanuj_Jedzonko/">Check the app</a>
 <br>
 <br>
-Users can create their own receipts and then make weekly food plans.
+Create your own receipts and weekly food plans.
 <br>
 <br>
 This project was made during a scrum week part of a CodersLab bootcamp in front-end programming.<br>
